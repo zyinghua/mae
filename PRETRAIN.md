@@ -22,3 +22,10 @@ python submitit_pretrain.py \
 - Training time is ~42h in 64 V100 GPUs (800 epochs).
 
 To train ViT-Base or ViT-Huge, set `--model mae_vit_base_patch16` or `--model mae_vit_huge_patch14`.
+
+#SBATCH -p gpu-he
+#SBATCH --gres=gpu:4
+#SBATCH --constraint=v100
+#SBATCH -t 10:00:00
+pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+conda install numpy=1.23.5
