@@ -12,4 +12,4 @@ python -m torch.distributed.launch main_pretrain.py \
   --input_size 256 \
   --output_dir ../scratch/mae-output_dir \
   --log_dir ../scratch/mae-output_dir \
-  --data_path "../scratch/galaxy10-dataset/"
+  --data_path "../autodl-tmp/galaxy10-dataset/"
