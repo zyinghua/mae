@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# --- Start of slurm commands -----------
+
+# Request an hour of runtime:
+#SBATCH --time=12:00:00
+
+# Default resources are 1 core with 2.8GB of memory.
+# Use more memory (4GB):
+#SBATCH --mem=96G
+
+# Specify a job name:
+#SBATCH -J mae-pretrain
+
+# Specify an output file
+# %j is a special variable that is replaced by the JobID when 
+# job starts
+#SBATCH -o mae-%j.out
+#SBATCH -e mae-%j.out
+#SBATCH -p gpu --gres=gpu:2
+#SBATCH --constraint=geforce3090
+
+#----- End of slurm commands ----
+
+# Run a command
+
+source ./bashrc
+conda activate mae
+
+nvidia-smi
+chmod +x pretrain.sh
+./pretrain.sh
+
+echo "Training finished."
