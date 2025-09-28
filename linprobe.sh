@@ -9,4 +9,4 @@ python -m torch.distributed.launch --nproc_per_node=2 main_linprobe.py \
     --epochs 50 \
     --blr 0.003 \
     --weight_decay 0.0 \
-    --output_dir /users/yzhou392/scratch/linprobe_out
+    --output_dir /users/yzhou392/scratch/mae-linprobe-out

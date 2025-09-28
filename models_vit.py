@@ -53,16 +53,15 @@ class VisionTransformer(timm.models.vision_transformer.VisionTransformer):
         return outcome
 
 def vit_tiny_patch16(**kwargs):
-    # DeiT-Ti: 192 dim, 12 layers, 3 heads -> head_dim=64, MLP 4x
     return VisionTransformer(
-        patch_size=16, embed_dim=192, depth=12, num_heads=3, mlp_ratio=4, qkv_bias=True,
+        patch_size=16, embed_dim=192, depth=6, num_heads=6, mlp_ratio=4, qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
 
 def vit_small_patch16(**kwargs):
-    # DeiT-S: 384 dim, 12 layers, 6 heads -> head_dim=64, MLP 4x
     return VisionTransformer(
-        patch_size=16, embed_dim=384, depth=12, num_heads=6, mlp_ratio=4, qkv_bias=True,
+        patch_size=16, embed_dim=384, depth=8, num_heads=8, mlp_ratio=4, qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+
 
 def vit_base_patch16(**kwargs):
     model = VisionTransformer(

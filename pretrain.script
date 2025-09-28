@@ -15,8 +15,8 @@
 # Specify an output file
 # %j is a special variable that is replaced by the JobID when 
 # job starts
-#SBATCH -o mae-%j.out
-#SBATCH -e mae-%j.out
+#SBATCH -o mae-pretrain-%j.out
+#SBATCH -e mae-pretrain-%j.out
 #SBATCH -p gpu --gres=gpu:2
 #SBATCH --constraint=geforce3090
 
