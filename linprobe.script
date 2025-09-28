@@ -10,13 +10,13 @@
 #SBATCH --mem=96G
 
 # Specify a job name:
-#SBATCH -J mae-pretrain
+#SBATCH -J mae-linprobe
 
 # Specify an output file
 # %j is a special variable that is replaced by the JobID when 
 # job starts
-#SBATCH -o mae-%j.out
-#SBATCH -e mae-%j.out
+#SBATCH -o mae-linprobe-%j.out
+#SBATCH -e mae-linprobe-%j.out
 #SBATCH -p gpu --gres=gpu:2
 #SBATCH --constraint=geforce3090
 
@@ -28,7 +28,7 @@ source ~/.bashrc
 conda activate mae
 
 nvidia-smi
-chmod +x pretrain.sh
-./pretrain.sh
+chmod +x linprobe.sh
+./linprobe.sh
 
 echo "Training finished."
