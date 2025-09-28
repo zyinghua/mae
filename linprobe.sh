@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python -m torch.distributed.launch --nproc_per_node=2 python main_linprobe.py \
+python -m torch.distributed.launch --nproc_per_node=2 main_linprobe.py \
     --model vit_base_patch16 \
     --finetune /users/yzhou392/scratch/mae-output_dir/checkpoint-350.pth \
     --data_path /users/yzhou392/scratch/galaxy10-dataset \
