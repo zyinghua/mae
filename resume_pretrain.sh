@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python -m torch.distributed.launch main_pretrain.py \
+python -m torch.distributed.launch --nproc_per_node=2 main_pretrain.py \
   --batch_size 64 \
   --model mae_vit_large_patch16 \
   --norm_pix_loss \
