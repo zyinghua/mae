@@ -11,6 +11,7 @@ python -m torch.distributed.launch --nproc_per_node=4 main_finetune.py \
   --weight_decay 0.1 \
   --drop_path 0.1 \
   --warmup_epochs 10 \
+  --global_pool False \
   --smoothing 0.1 \
   --mixup 0.5 \
   --cutmix 1.0 \
