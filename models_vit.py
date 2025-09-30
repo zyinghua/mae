@@ -54,7 +54,7 @@ class VisionTransformer(timm.models.vision_transformer.VisionTransformer):
 
 def vit_tiny_patch16(**kwargs):
     return VisionTransformer(
-        patch_size=16, embed_dim=128, depth=4, num_heads=8, mlp_ratio=4, qkv_bias=True,
+        patch_size=16, embed_dim=192, depth=12, num_heads=3,, mlp_ratio=4, qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
 
 def vit_small_patch16(**kwargs):
