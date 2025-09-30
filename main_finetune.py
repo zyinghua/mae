@@ -51,7 +51,7 @@ def get_args_parser():
     parser.add_argument('--model', default='vit_large_patch16', type=str, metavar='MODEL',
                         help='Name of model to train')
 
-    parser.add_argument('--input_size', default=256, type=int,
+    parser.add_argument('--input_size', default=224, type=int,
                         help='images input size')
 
     parser.add_argument('--drop_path', type=float, default=0.1, metavar='PCT',
@@ -229,7 +229,7 @@ def main(args):
         num_classes=args.nb_classes,
         drop_path_rate=args.drop_path,
         global_pool=args.global_pool,
-        img_size=256
+        img_size=args.input_size
     )
 
     if args.finetune and not args.eval:

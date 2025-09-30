@@ -4,7 +4,7 @@ python -m torch.distributed.launch --nproc_per_node=4 main_finetune.py \
   --model vit_tiny_patch16 \
   --data_path /root/autodl-tmp/galaxy10-dataset \
   --nb_classes 10 \
-  --input_size 256 \
+  --input_size 224 \
   --batch_size 64 \
   --epochs 200 \
   --blr 1e-3 \

@@ -9,7 +9,7 @@ python -m torch.distributed.launch --nproc_per_node=2 main_pretrain.py \
   --warmup_epochs 40 \
   --blr 2e-4 \
   --weight_decay 0.05 \
-  --input_size 256 \
+  --input_size 224 \
   --output_dir ../scratch/mae-pretrain-output-dir \
   --log_dir ../scratch/mae-pretrain-output-dir \
   --data_path "../scratch/galaxy10-dataset/"

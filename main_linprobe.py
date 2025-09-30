@@ -130,13 +130,13 @@ def main(args):
 
     # linear probe: weak augmentation
     transform_train = transforms.Compose([
-        RandomResizedCrop(256, interpolation=3),
+        transforms.RandomResizedCrop(224, scale=(0.8, 1.0), ratio=(0.9, 1.1), interpolation=3),  # 3 is bicubic
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
     transform_val = transforms.Compose([
-        transforms.Resize(256, interpolation=3),
-        transforms.CenterCrop(256),
+        transforms.Resize(224, interpolation=3),
+        transforms.CenterCrop(224),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
     dataset_train = datasets.ImageFolder(os.path.join(args.data_path, 'train'), transform=transform_train)
