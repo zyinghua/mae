@@ -155,6 +155,14 @@ def main(args):
     # define the model
     model = models_mae.__dict__[args.model](norm_pix_loss=args.norm_pix_loss)
 
+    def count_params(m):
+        total = sum(p.numel() for p in m.parameters())
+        trainable = sum(p.numel() for p in m.parameters() if p.requires_grad)
+        return total, trainable
+
+    total, trainable = count_params(model)
+    print(f"Params: {total:,} ({total/1e6:.2f}M) | Trainable: {trainable:,} ({trainable/1e6:.2f}M)")
+
     model.to(device)
 
     model_without_ddp = model
