@@ -3,7 +3,6 @@
 python -m torch.distributed.launch --nproc_per_node=2 main_pretrain.py \
   --batch_size 128 \
   --model mae_vit_tiny_patch16 \
-  --norm_pix_loss \
   --mask_ratio 0.5 \
   --epochs 800 \
   --warmup_epochs 40 \
