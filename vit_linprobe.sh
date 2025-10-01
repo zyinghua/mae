@@ -7,6 +7,6 @@ python -m torch.distributed.launch --nproc_per_node=4 main_linprobe.py \
     --nb_classes 10 \
     --batch_size 64 \
     --epochs 90 \
-    --blr 0.1 \
+    --blr 0.005 \
     --weight_decay 0.0 \
     --output_dir /root/scratch/vit-tiny-linprobe-out
