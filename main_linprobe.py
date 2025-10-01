@@ -31,7 +31,6 @@ from timm.models.layers import trunc_normal_
 import util.misc as misc
 from util.pos_embed import interpolate_pos_embed
 from util.misc import NativeScalerWithGradNormCount as NativeScaler
-from util.lars import LARS
 from util.crop import RandomResizedCrop
 
 import models_vit
@@ -130,7 +129,7 @@ def main(args):
 
     # linear probe: weak augmentation
     transform_train = transforms.Compose([
-        transforms.RandomResizedCrop(224, scale=(0.8, 1.0), ratio=(0.9, 1.1), interpolation=3),  # 3 is bicubic
+        RandomResizedCrop(224, interpolation=3),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
@@ -251,7 +250,7 @@ def main(args):
         model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu])
         model_without_ddp = model.module
 
-    optimizer = LARS(model_without_ddp.head.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    optimizer = torch.optim.AdamW(model_without_ddp.head.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     print(optimizer)
     loss_scaler = NativeScaler()
 
