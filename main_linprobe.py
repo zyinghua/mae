@@ -189,8 +189,7 @@ def main(args):
 
     model = models_vit.__dict__[args.model](
         num_classes=args.nb_classes,
-        global_pool=args.global_pool,
-        img_size=256
+        global_pool=args.global_pool
     )
 
     if args.finetune and not args.eval:
