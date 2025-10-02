@@ -1,14 +1,14 @@
 #!/bin/bash
 
-python -m torch.distributed.launch --nproc_per_node=2 main_pretrain.py \
-  --batch_size 128 \
-  --model mae_vit_tiny_patch16 \
-  --mask_ratio 0.5 \
-  --epochs 800 \
+python -m torch.distributed.launch --nproc_per_node=4 main_pretrain.py \
+  --batch_size 64 \
+  --model mae_vit_base_patch16 \
+  --mask_ratio 0.6 \
+  --epochs  \
   --warmup_epochs 40 \
-  --blr 1.5e-4 \
+  --blr 1.5e-3 \
   --weight_decay 0.05 \
   --input_size 224 \
-  --output_dir ../scratch/mae-pretrain-output-dir \
-  --log_dir ../scratch/mae-pretrain-output-dir \
-  --data_path "../scratch/galaxy10-dataset/"
+  --output_dir /root/scratch/mae-pretrain-output-dir \
+  --log_dir /root/scratch/mae-pretrain-output-dir \
+  --data_path /root/autodl-tmp/galaxy10-dataset

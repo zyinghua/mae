@@ -225,18 +225,24 @@ class MaskedAutoencoderViT(nn.Module):
         return loss, pred, mask
 
 
-def mae_vit_tiny_patch16_dec512d8b(**kwargs):
+def mae_vit_tiny_patch16_dec256d8h8(**kwargs):
     return MaskedAutoencoderViT(
-        patch_size=16, embed_dim=192, depth=12, num_heads=4,
-        decoder_embed_dim=128, decoder_depth=4, decoder_num_heads=8,
+        patch_size=16, embed_dim=192, depth=12, num_heads=8,
+        decoder_embed_dim=256, decoder_depth=8, decoder_num_heads=8,
         mlp_ratio=4, norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
 
-
-def mae_vit_small_patch16_dec512d8b(**kwargs):
+def mae_vit_tiny_patch16_dec512d8h16(**kwargs):
     return MaskedAutoencoderViT(
-        patch_size=16, embed_dim=384, depth=8, num_heads=8,
+        patch_size=16, embed_dim=192, depth=12, num_heads=8,
         decoder_embed_dim=512, decoder_depth=8, decoder_num_heads=16,
         mlp_ratio=4, norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+
+
+# def mae_vit_small_patch16_dec512d8b(**kwargs):
+#     return MaskedAutoencoderViT(
+#         patch_size=16, embed_dim=384, depth=12, num_heads=8,
+#         decoder_embed_dim=512, decoder_depth=8, decoder_num_heads=16,
+#         mlp_ratio=4, norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
 
 
 def mae_vit_base_patch16_dec512d8b(**kwargs):
@@ -264,8 +270,8 @@ def mae_vit_huge_patch14_dec512d8b(**kwargs):
 
 
 # set recommended archs
-mae_vit_tiny_patch16 = mae_vit_tiny_patch16_dec512d8b
-mae_vit_small_patch16 = mae_vit_small_patch16_dec512d8b
+mae_vit_tiny_patch16 = mae_vit_tiny_patch16_dec512d8h16
+# mae_vit_small_patch16 = mae_vit_small_patch16_dec512d8b
 mae_vit_base_patch16 = mae_vit_base_patch16_dec512d8b  # decoder: 512 dim, 8 blocks
 mae_vit_large_patch16 = mae_vit_large_patch16_dec512d8b  # decoder: 512 dim, 8 blocks
 mae_vit_huge_patch14 = mae_vit_huge_patch14_dec512d8b  # decoder: 512 dim, 8 blocks
