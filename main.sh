@@ -1,5 +1,8 @@
 #!/bin/bash
 
+chmod +x pretrain_dec256d4.sh
+./pretrain_dec256d4.sh
+
 chmod +x pretrain_dec256d8.sh
 ./pretrain_dec256d8.sh
 

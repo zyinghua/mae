@@ -19,7 +19,7 @@ python -m torch.distributed.launch --nproc_per_node=4 main_linprobe.py \
     --data_path /root/autodl-tmp/galaxy10-dataset \
     --nb_classes 10 \
     --batch_size 64 \
-    --epochs 120 \
+    --epochs 90 \
     --blr 2e-3 \
     --weight_decay 0.0 \
     --output_dir /root/scratch/mae-base-linprobe-output-dec256d8b
