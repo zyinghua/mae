@@ -1,7 +1,7 @@
 #!/bin/bash
 
 python -m torch.distributed.launch --nproc_per_node=4 main_finetune.py \
-  --model vit_tiny_patch16 \
+  --model vit_base_patch16 \
   --data_path /root/autodl-tmp/galaxy10-dataset \
   --nb_classes 10 \
   --input_size 224 \
@@ -15,4 +15,4 @@ python -m torch.distributed.launch --nproc_per_node=4 main_finetune.py \
   --smoothing 0.1 \
   --mixup 0.5 \
   --cutmix 1.0 \
-  --output_dir /root/scratch/vit-tiny-scratch-out
+  --output_dir /root/scratch/vit-base-pretrain-out
