@@ -57,17 +57,23 @@ def vit_tiny_patch16(**kwargs):
         patch_size=16, embed_dim=192, depth=12, num_heads=8, mlp_ratio=4, qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
 
-def vit_small_patch16(**kwargs):
+def vit_small_patch16_emb384(**kwargs):
     return VisionTransformer(
         patch_size=16, embed_dim=384, depth=12, num_heads=8, mlp_ratio=4, qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
 
+def vit_small_patch16_dp6(**kwargs):
+    model = VisionTransformer(
+        patch_size=16, embed_dim=768, depth=6, num_heads=12, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+    return model
 
 def vit_base_patch16(**kwargs):
     model = VisionTransformer(
         patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
     return model
+
 
 def vit_large_patch16(**kwargs):
     model = VisionTransformer(
