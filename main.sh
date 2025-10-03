@@ -1,0 +1,19 @@
+#!/bin/bash
+
+chmod +x pretrain_dec256d8.sh
+./pretrain_dec256d8.sh
+
+chmod +x pretrain_dec512d4.sh
+./pretrain_dec512d4.sh
+
+chmod +x pretrain_enc6dp.sh
+./pretrain_enc6dp.sh
+
+chmod +x pretrain_enc384emb.sh
+./pretrain_enc384emb.sh
+
+chmod +x pretrain_mr04.sh
+./pretrain_mr04.sh
+
+chmod +x pretrain_mr09.sh
+./pretrain_mr09.sh
