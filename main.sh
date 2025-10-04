@@ -1,13 +1,16 @@
 #!/bin/bash
 
-chmod +x pretrain_dec256d4.sh
-./pretrain_dec256d4.sh
+chmod +x pretrain_dec256d1.sh
+./pretrain_dec256d1.sh
 
-chmod +x pretrain_dec256d8.sh
-./pretrain_dec256d8.sh
+chmod +x pretrain_dec128d8.sh
+./pretrain_dec128d8.sh
 
-chmod +x pretrain_dec512d4.sh
-./pretrain_dec512d4.sh
+# chmod +x pretrain_dec256d4.sh
+# ./pretrain_dec256d4.sh
+
+# chmod +x pretrain_dec256d8.sh
+# ./pretrain_dec256d8.sh
 
 chmod +x pretrain_enc6dp.sh
 ./pretrain_enc6dp.sh

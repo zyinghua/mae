@@ -2,7 +2,7 @@
 
 python -m torch.distributed.launch --nproc_per_node=4 main_pretrain.py \
   --batch_size 64 \
-  --model mae_vit_base_patch16 \
+  --model mmae_vit_base_patch16_dec512d8b \
   --mask_ratio 0.75 \
   --epochs 200 \
   --warmup_epochs 40 \
@@ -10,5 +10,5 @@ python -m torch.distributed.launch --nproc_per_node=4 main_pretrain.py \
   --weight_decay 0.05 \
   --input_size 224 \
   --data_path /root/autodl-tmp/galaxy10-dataset \
-  --output_dir /root/scratch/mae-base-pretrain-output-dir \
-  --log_dir /root/scratch/mae-base-pretrain-output-dir
+  --output_dir /root/scratch/mae-base-pretrain-output-dec512d8b \
+  --log_dir /root/scratch/mae-base-pretrain-output-dec512d8b
