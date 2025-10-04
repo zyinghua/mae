@@ -14,7 +14,7 @@ python -m torch.distributed.launch --nproc_per_node=4 main_pretrain.py \
   --log_dir /root/scratch/mae-base-pretrain-output-enc384emb
 
 python -m torch.distributed.launch --nproc_per_node=4 main_linprobe.py \
-    --model vit_base_patch16 \
+    --model vit_small_patch16_emb384 \
     --finetune /root/scratch/mae-base-pretrain-output-enc384emb/checkpoint-199.pth \
     --data_path /root/autodl-tmp/galaxy10-dataset \
     --nb_classes 10 \
