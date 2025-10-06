@@ -1,9 +1,9 @@
 #!/bin/bash
 
 python -m torch.distributed.launch --nproc_per_node=4 main_finetune.py \
-  --model vit_tiny_patch16 \
+  --model vit_base_patch16 \
   --data_path /root/autodl-tmp/galaxy10-dataset \
-  --finetune /root/scratch/mae-pretrain-output-dir/checkpoint-799.pth \
+  --finetune /root/scratch/mae-base-pretrain-output-dec256d4b/checkpoint-199.pth \
   --nb_classes 10 \
   --input_size 224 \
   --batch_size 64 \
@@ -17,4 +17,3 @@ python -m torch.distributed.launch --nproc_per_node=4 main_finetune.py \
   --mixup 0.5 \
   --cutmix 1.0 \
   --output_dir /root/scratch/mae-finetune-output-dir
-
