@@ -1,4 +1,4 @@
-## Masked Autoencoders on the [Galaxy10_DECALs dataset](https://huggingface.co/datasets/matthieulel/galaxy10_decals) in Pytorch, extended from the original [MAE repo](https://github.com/facebookresearch/mae).
+## Masked Autoencoders for the [Galaxy10_DECALs dataset](https://huggingface.co/datasets/matthieulel/galaxy10_decals) in Pytorch, extended from the original [MAE repo](https://github.com/facebookresearch/mae).
 
 ## This is a brief introduction of the scripts for reproducing the results and ablations. Please firstly ensure you have the right environmental setup for the original [MAE repo](https://github.com/facebookresearch/mae).
 
