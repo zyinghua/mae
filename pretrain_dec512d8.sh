@@ -9,6 +9,6 @@ python -m torch.distributed.launch --nproc_per_node=4 main_pretrain.py \
   --blr 1.5e-4 \
   --weight_decay 0.05 \
   --input_size 224 \
-  --data_path /root/autodl-tmp/galaxy10-dataset \
+  --data_path ./galaxy10-dataset \
   --output_dir /root/scratch/mae-base-pretrain-output-dec512d8b \
   --log_dir /root/scratch/mae-base-pretrain-output-dec512d8b

@@ -8,4 +8,5 @@ git lfs install
 git clone https://huggingface.co/datasets/matthieulel/galaxy10_decals
 
 # Extract parquet files to actual images
+# Please specify the paths here to the parquet files (src) and the output folder (dst) respectively
 python extract_parquet_to_folder.py --src ./galaxy10_decals/data --dst ./galaxy10-dataset

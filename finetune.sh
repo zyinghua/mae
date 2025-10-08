@@ -2,7 +2,7 @@
 
 python -m torch.distributed.launch --nproc_per_node=4 main_finetune.py \
   --model vit_base_patch16 \
-  --data_path /root/autodl-tmp/galaxy10-dataset \
+  --data_path ./galaxy10-dataset \
   --finetune /root/scratch/mae-base-pretrain-output-dec256d4b/checkpoint-199.pth \
   --nb_classes 10 \
   --input_size 224 \
